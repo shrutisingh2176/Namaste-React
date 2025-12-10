@@ -1,40 +1,34 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-/*const heading = React.createElement( "h1" , { id: "heading"} , "Hello World from React"); // it create an object h1 here
+
+
+
+//  React.createElement => Object (created a react element(heading) which is an object)=> HTMLelement (render)
+
+const heading = React.createElement( "h1" , { id: "heading"} , "Namaste React"); 
 
 console.log(heading);   // return object 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-    root.render(heading);    // this render method take the object and put it up 
-    // and convert it into heading tag and put i up on the dorm */
+    root.render(heading);     
+
+
+//  JSX is html or Xml like code 
+// transpiled before it goes to js engine , it is done by parcel (Babel)
+
+////  JSX =>React.createElement => Object (created a react element(heading) which is an object)=> HTMLelement (render)
+const jsxheading=<h1 className="head" tabIndex="1">Namaste React with jsx </h1>; //ifyou are writing in multiple lines use()
+console.log(jsxheading);
 
 
 
 
+// React Fuctional Element 
+const HeadingComponent = () => {
+   < div id="container">
+    return <h1>Namaste React Functional Component </h1>;
+    </div>
+};
 
 
-
-
-
-//HOW TO CREATE NESTED ELEMENT IN REACT 
-/*
- <div id="parent">
-      <div id = "child">
-         <h1> Im h1 tag </h1>
-      </div>
- </div>
-*/
-
-const parent = React.createElement( 
-    "div",
-    {id: "parent"},
-    React.createElement(
-        "div",
-        {id: "child"},
-        React.createElement("h1", {} , "I'm an h1 tag")
-    )
-     
-);
- const root = ReactDOM.createRoot(document.getElementById("root")); 
-
-  root.render(parent);
-  
